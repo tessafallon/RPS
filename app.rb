@@ -4,7 +4,7 @@ Bundler.require
 
 	class RPS_App < Sinatra::Application
 		get '/throw/:type' do
-		@user_choice = params[:type].to_s
+		@user_choice = params[:type]
 		@choices = ["rock", "paper", "scissor"]
 		@comp_choice = @choices.sample
 		game = Game.new(@user_choice, @comp_choice)
